@@ -1,0 +1,50 @@
+{
+  "name": "@woolson/swagger-to-yapi",
+  "version": "1.1.0",
+  "description": "",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "lint": "eslint --ext .ts,.js lib/",
+    "prepublish": "npm run build"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "commit-msg": "commitlint --env HUSKY_GIT_PARAMS"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-angular"
+    ]
+  },
+  "dependencies": {
+    "@nestjs/common": "^6.0.0",
+    "@nestjs/core": "^6.0.0",
+    "@nestjs/swagger": "^4.0.0",
+    "merge": "^1.2.1",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^6.5.4",
+    "webpack-merge": "^4.2.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-angular": "^8.3.4",
+    "@types/node": "^13.7.7",
+    "@typescript-eslint/eslint-plugin": "^2.26.0",
+    "@typescript-eslint/parser": "^2.26.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "prettier": "^2.0.2",
+    "typescript": "^3.8.3"
+  },
+  "author": "Woolson Lee",
+  "license": "ISC"
+}
